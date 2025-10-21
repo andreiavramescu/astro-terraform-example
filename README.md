@@ -9,7 +9,7 @@ Minimal setup for the [astronomer/astro](https://registry.terraform.io/providers
 3. Run `terraform init`, `terraform plan`, and `terraform apply`.
 4. Check the outputs for workspace, cluster, and deployment IDs. Use `terraform destroy` to tear it all down.
 
-When reusing an existing dedicated cluster, set `enable_cluster = true`, `create_cluster = false`, supply the name via `existing_cluster_name`, and keep any deployments that should use it with `enable_cluster = true` (either globally or inside the relevant entry of `var.environments`). If `enable_cluster` ends up false, deployments automatically fall back to `STANDARD` and use whatever `cloud_provider` / `region` you set in the environment definition.
+Reusing an existing dedicated cluster? Turn on `enable_cluster`, leave `create_cluster` off, and point `existing_cluster_name` at the cluster you want. Keep the deployments that should attach to it flagged with `enable_cluster = true` (globally or per environment). If the toggle ends up false, Terraform defaults to `STANDARD` deployments that rely on the `cloud_provider` / `region` values in each environment.
 
 ## Files
 
