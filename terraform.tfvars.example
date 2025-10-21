@@ -1,5 +1,8 @@
-organization_id     = "cmgt8204f03sa01mposqck051"
+organization_id     = "example-org-id"
 notification_emails = ["platform-alerts@example.com"]
+
 # enable_cluster = false
 # create_cluster = false
 # existing_cluster_name = "prod-shared-cluster"
+
+workspace_name = "demo-terraform"

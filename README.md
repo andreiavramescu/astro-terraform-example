@@ -15,6 +15,13 @@ Keep the deployments that should attach to it flagged with `enable_cluster = tru
 
 If the toggle ends up false, Terraform defaults to `STANDARD` deployments that rely on the `cloud_provider` / `region` values in each environment.
 
+Dedicated clusters run only your organization’s Deployments in a single-tenant environment on Astronomer’s cloud. They unlock extra controls for region choice, private networking, and tighter isolation, and a single dedicated cluster can serve multiple Airflow deployments/environments. Reach for a dedicated cluster when you need:
+- Private networking into data services.
+- Additional control over the region that hosts your workloads.
+- Maximum isolation for compliance or security reasons.
+
+Set `create_cluster = true` (or specify `existing_cluster_name`) when you need those guarantees; otherwise stick with standard clusters to keep things simple.
+
 ## Files
 
 - `main.tf` — provider + resources (workspace, optional cluster, deployments).
